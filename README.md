@@ -33,5 +33,14 @@ The model is built upon a U-shape encoder-decoder architecture.
 
 To run this project, you need **Python 3.x** and the following libraries:
 
-```bash
+
 pip install torch torchvision numpy matplotlib opencv-python pillow scikit-learn
+🚀 Usage1. TrainingThe model is trained using a combination of Binary Cross Entropy (BCE) and Dice Loss.Optimizer: Adam (LR=0.0001) Batch Size: 8 Epochs: 300 (Paper recommendation) / 50 (Demo implementation)You can run the training notebook SegmentNet_Project.ipynb directly in Google Colab or on your local machine.2. Evaluation MetricsThe project evaluates the model using the following metrics:IoU (Intersection over Union)AccuracySensitivity (Recall)SpecificityF1-ScoreDice Coefficient📊 Results (BUSI Dataset)MetricPaper Reported This Implementation (Approx)IoU98.96%~90%Accuracy93.88%~94%F1-Score77.07%~80%(Note: The results in this repo depend on the number of epochs and random seed. The paper reported results are for the 3-class segmentation task.)🧩 Key Features Implemented[x] Custom DaM Block: Implements the Multi-focus Distance-aware Mechanism with linear complexity O(dSN).[x] Custom LFEB Block: Implements Depthwise Separable Convolutions with Smoothed ReLU.[x] Hybrid Loss Function: 0.5 * BCE + Dice Loss.[x] Automated Preprocessing: Handling multi-mask merging for BUSI dataset.🤝 ContributionThis project was implemented as part of a Master's degree coursework in Artificial Intelligence.Feel free to fork, open issues, or submit PRs.📜 CitationIf you use this code or the original paper logic, please cite the original authors:Code snippet@article{Ejiyi2024SegmentNet,
+  title={A unified 2D medical image segmentation network (SegmentNet) through distance-awareness and local feature extraction},
+  author={Ejiyi, Chukwuebuka Joseph and Qin, Zhen and et al.},
+  journal={Biocybernetics and Biomedical Engineering},
+  volume={44},
+  pages={431--449},
+  year={2024},
+  publisher={Elsevier}
+}
